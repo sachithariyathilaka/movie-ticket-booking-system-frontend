@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="margin-top: 50px; margin-left: 100px; width: 100%">
+            <form class="form-inline">
+                <div class="form-group" style="margin-left: 100px">
+                    <input type="button" class="btn btn-primary btn-block btn-large" value="Back" id="addBtn"  ng-click="back()" style="margin-top: -5px; width: 100px;">
+                    <input type="text" ng-model="search" class="form-control data" id="searchBox" placeholder="Search Movies" style="width: 500px">
+                </div>
+            </form>
+            <table id = "movies" class="table table-striped table-hover table-dark table-bordered" style="margin-left: -150px">
+                <tr>
+                    <th ng-click="sort('id')">Id
+                        <span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('name')">Movie Name
+                        <span class="glyphicon sort-icon" ng-show="sortKey=='name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('owner')">Owner
+                        <span class="glyphicon sort-icon" ng-show="sortKey=='owner'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('price')">Ticket Price
+                        <span class="glyphicon sort-icon" ng-show="sortKey=='price'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('showTime')">Show Time
+                        <span class="glyphicon sort-icon" ng-show="sortKey=='showTime'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('status')">Movie Status
+                        <span class="glyphicon sort-icon" ng-show="sortKey=='status'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('availableTickets')">Available Tickets
+                        <span class="glyphicon sort-icon" ng-show="sortKey=='availableTickets'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('date')">Date
+                        <span class="glyphicon sort-icon" ng-show="sortKey=='date'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    </th>
+                </tr>
+                <tr dir-paginate="movie in movies|orderBy:sortKey:reverse|filter:search|itemsPerPage:10">
+                    <td style="color: #4a77d4; text-decoration: underline" ng-click="putId(movie.id)">{{movie.id}}</td>
+                    <td>{{movie.name}}</td>
+                    <td>{{movie.owner}}</td>
+                    <td>{{movie.price}}</td>
+                    <td>{{movie.showTime}}</td>
+                    <td>{{movie.status}}</td>
+                    <td>{{movie.availableTickets}}</td>
+                    <td>{{movie.date}}</td>
+                </tr>
+            </table>
+            <dir-pagination-controls
+                    max-size="10"
+                    direction-links="true"
+                    boundary-links="true" >
+            </dir-pagination-controls>
+        </div>
+    </div>
+</div>

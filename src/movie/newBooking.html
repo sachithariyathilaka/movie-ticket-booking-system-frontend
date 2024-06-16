@@ -1,0 +1,32 @@
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="template" style="height: 640px; margin-top: 20px; margin-bottom: 20px;">
+            <div class="login">
+                <div class="spinner-border" style="width: 3rem; height: 3rem; margin-top: 5px; float: left;" role="status" ng-show="loader">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <h1 style="margin-bottom: 50px; margin-top: 30px">Add New Booking</h1>
+            </div>
+            <form name="movie" novalidates>
+                <div class="input-group">
+                    <input type="text" class="form-control data"  placeholder="Movie Name" name="name" ng-model="name" ng-required="true" />
+                </div>
+                <div class="input-group">
+                    <input class="form-control data" type="text"  placeholder="Date" name="date" ng-model="date" ng-required="true"/>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control data" name="count" placeholder="Ticket Count" ng-model="ticketCount" ng-required="true">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control data" name="showTime" placeholder="Show Time" ng-model="showTime" ng-required="true">
+                </div>
+                <br>
+                <input type="button" class="btn btn-primary btn-block btn-large" id="login" value="Add Booking" ng-click="addBooking()">
+                <input type="button" class="btn btn-primary btn-block btn-large" value="Back" id="login"  ng-click="back()">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
