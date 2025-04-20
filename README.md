@@ -7,8 +7,8 @@ Angular JS project for movie ticket booking system.
     * CSS 3
 
 * ### Release Note
-    * Release 1.0.0
-    * Date: 2022/05/20
+    * Version 1.0.0
+    * Release Date: 2022/05/20
     * Module: Movie Ticket Booking System Frontend
     * Changes
         * User authentication module implemented.
